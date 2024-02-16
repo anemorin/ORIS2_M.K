@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { PokemonResponseType, PokemonType } from "../types/MainPageTypes";
 import { useState, useEffect } from "react";
 import { toUpperCase } from "../utils";
+import axios from "axios";
 
 const PokemonContainer = styled.div`
   display: flex;
@@ -55,26 +56,22 @@ const Type = styled.p`
 
 type Props = {
   pokemon: PokemonResponseType;
-  id: string;
 }
 
-const Card: React.FC<Props> = ({ pokemon, id }) => {
+const Card: React.FC<Props> = ({ pokemon }) => {
   console.warn(pokemon);
   const [pokemonData, setPokemonData] = useState<PokemonType>();
 
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get<PokemonType>(
          pokemon.url,
           {
             method: "GET",
           }
         );
-
-        const data: PokemonType = await response.json();
-
-        setPokemonData(data);
+        setPokemonData(response.data);
       }
       catch (error) {
         console.log(error);
@@ -85,13 +82,13 @@ const Card: React.FC<Props> = ({ pokemon, id }) => {
   }, [pokemon]);
 
   return (
-    <PokemonContainer key={id}>
+    <PokemonContainer key={pokemonData?.id}>
       {
         pokemonData ? (
           <>
             <CardTitleContainer>
               <CardTitle>{toUpperCase(pokemon.name)}</CardTitle>
-              <p>{`#${id}`}</p>
+              <p>{`#${pokemonData?.id}`}</p>
             </CardTitleContainer>
 
             <PokemonImage src={
@@ -99,7 +96,6 @@ const Card: React.FC<Props> = ({ pokemon, id }) => {
               pokemonData.sprites.front_default
               }
             />
-
             <TypesContainer>
               {
                 pokemonData.types.map((type, index) => (

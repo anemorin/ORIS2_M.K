@@ -21,11 +21,10 @@ const PageLayout : React.FC<Props> = ({data}) => {
   return (
     <LayoutContainer>
       {data.length
-      ? (data.map((pokemon, index) => (
+      ? (data.map((pokemon) => (
         <Card
-          key={index}
+          key={pokemon.name}
           pokemon={pokemon}
-          id={(index+1).toString()}
         />
       )))
       : 'Покеманов не будэт'}
