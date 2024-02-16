@@ -1,6 +1,7 @@
 import styled from "styled-components"
-import { PokemonType } from "../types/MainPageTypes"
+import { PokemonResponseType } from "../types/MainPageTypes"
 import React from "react";
+import Card from "./Card";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -9,30 +10,11 @@ const LayoutContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   padding: 36px 0;
-  gap: 12px;
+  gap: 24px;
 `
 
-const PokemonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  gap: 12px;
-  border-radius: 12px;
-  border: 1px solid black;
-  background-color: white;
-  width: 200px;
-  height: 200px;
-`;
-
-const PokemonImage = styled.img`
-  width: 50%;
-  height: 50%;
-`;
-
 type Props = {
-  data: PokemonType[];
+  data: PokemonResponseType[];
 }
 
 const PageLayout : React.FC<Props> = ({data}) => {
@@ -40,10 +22,11 @@ const PageLayout : React.FC<Props> = ({data}) => {
     <LayoutContainer>
       {data.length
       ? (data.map((pokemon, index) => (
-        <PokemonContainer key={index}>
-          <PokemonImage src={pokemon.img} />
-          <p>{pokemon.name.toUpperCase()}</p>
-        </PokemonContainer>
+        <Card
+          key={index}
+          pokemon={pokemon}
+          id={(index+1).toString()}
+        />
       )))
       : 'Покеманов не будэт'}
     </LayoutContainer>
