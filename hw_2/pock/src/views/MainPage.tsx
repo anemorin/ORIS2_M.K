@@ -10,6 +10,7 @@ const MainPage: React.FC = () => {
   const [page, setPage] = useState<number>(1);
   const [totalCount, setTotalCount] = useState<number>();
   const [fetchState, setFetchState] = useState<boolean>(false);
+  const [canFetch, setCanFetch] = useState<boolean>(true);
 
   const initialFetch = async () => {
     setFetchState(true);
@@ -20,12 +21,13 @@ const MainPage: React.FC = () => {
   }
 
   useEffect(() => {
-    if (searchValue.length === 0) {
+    if (canFetch) {
       initialFetch();
     }
-  }, [page, searchValue]);
+  }, [page]);
 
   const onSearchHandle = async () => {
+    setCanFetch(!searchValue.length)
     if (searchValue.length > 0) {
       setPokemonData([]);
       const response = await MainPageService.fetchPokemons(1300);
@@ -33,6 +35,8 @@ const MainPage: React.FC = () => {
         return pokemon.name.includes(searchValue.toLowerCase());
       });
       setPokemonData(filteredData ?? [])
+    } else {
+      initialFetch()
     }
   }
 
