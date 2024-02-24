@@ -9,7 +9,7 @@ const HeaderContainer = styled.div<{align?: string}>`
   display: flex;
   align-items: ${(props) => props.align ?? "center"};
   flex-direction: column;
-  padding: 36px 0;
+  padding: 36px 24px;
 `;
 
 const Title = styled.p`
@@ -18,33 +18,36 @@ const Title = styled.p`
   font-size: 32px;
 `;
 
-const PokeballContainer = styled.div`
-  position: absolute;
-  left: 80%;
-  top: -10%;
-  width: 30%;
-  height: 30%;
-  opacity: 50%;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-`
-const SmallPokeballContainer = styled.div`
-  position: absolute;
-  left: 85%;
-  top: -2%;
-  width: 130px;
-  height: 130px;
-  opacity: 50%;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-`
+// const PokeballContainer = styled.div`
+//   /* position: absolute; */
+//   z-index: 1000;
+//   left: 80%;
+//   top: -10%;
+//   width: 30%;
+//   height: 30%;
+//   opacity: 50%;
+//   overflow: hidden;
+//   img {
+//     width: 100%;
+//     height: 100%;
+//   }
+// `
+// const SmallPokeballContainer = styled.div`
+//   /* position: absolute; */
+//   left: 85%;
+//   top: -2%;
+//   width: 130px;
+//   height: 130px;
+//   opacity: 50%;
+//   overflow: hidden;
+//   img {
+//     width: 100%;
+//     height: 100%;
+//   }
+// `
 
 const SearchContainer = styled.div`
-  width: 80%;
+  width: 100%;
   max-width: 560px;
 `
 
@@ -76,9 +79,9 @@ const PageHeader: React.FC<Props> = ({
   return (
     <HeaderContainer>
       {title && <Title>{title}</Title>}
-      <PokeballContainer>
+      {/* <PokeballContainer>
         <img src={icons.pokeball} alt="pokeball" />
-      </PokeballContainer>
+      </PokeballContainer> */}
       <SearchContainer>
         <InputComponent
           value={searchValue}
@@ -101,9 +104,9 @@ export const SmallHeader = () => {
       >
         <img src={icons.arroy} alt="back" />
       </BackButton>
-      <SmallPokeballContainer>
+      {/* <SmallPokeballContainer>
         <img src={icons.pokeball} alt="pokeball" />
-      </SmallPokeballContainer>
+      </SmallPokeballContainer> */}
     </HeaderContainer>
   )
 }

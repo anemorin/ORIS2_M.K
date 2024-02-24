@@ -29,6 +29,12 @@ type MovesType = {
   }
 }
 
+type AbilityType = {
+  ability: {
+    name: string;
+  }
+}
+
 export type PokemonType = {
   id: string;
   name: string;
@@ -45,4 +51,5 @@ export type PokemonType = {
   height: number;
   weight: number;
   moves: MovesType[];
+  abilities: AbilityType[];
 }

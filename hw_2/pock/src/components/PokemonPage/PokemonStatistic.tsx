@@ -19,7 +19,7 @@ const CardHeader = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   max-width: 560px;
   justify-content: space-between;
   padding: 28px;
@@ -78,7 +78,6 @@ const PokemonStatistic : React.FC<Props> = ({ pokemon }) => {
           <p>{toId(pokemon.id)}</p>
           <Title
             color='blue'
-            size="32px"
           >
             {toUpperCase(pokemon.name)}
           </Title>

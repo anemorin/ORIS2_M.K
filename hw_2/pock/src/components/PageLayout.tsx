@@ -9,7 +9,7 @@ const LayoutContainer = styled.div`
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 36px 0;
+  padding: 36px 12px;
   gap: 24px;
 `
 

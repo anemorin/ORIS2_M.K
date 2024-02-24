@@ -21,6 +21,9 @@ const BreedingContainer = styled.div`
   align-items: center;
   width: 100%;
   gap: 4px;
+  @media (max-width: 560px) {
+    font-size: 12px;
+  }
 `
 
 const BreedingItem = styled.div`

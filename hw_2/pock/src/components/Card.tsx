@@ -30,6 +30,7 @@ export const CardTitleContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 `
 
 export const CardTitle = styled.p`
@@ -44,6 +45,7 @@ export const TypesContainer = styled.div`
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: flex-end;
 `
 
 export const Type = styled.p<{ type: string }>`

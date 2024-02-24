@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import PageLayout from "../components/PageLayout";
 import { PokemonResponseType } from "../types/MainPageTypes";
@@ -20,24 +20,29 @@ const MainPage: React.FC = () => {
   }
 
   useEffect(() => {
-    initialFetch();
-  }, [page]);
+    if (searchValue.length === 0) {
+      initialFetch();
+    }
+  }, [page, searchValue]);
 
-  const filterData = useCallback(() => {
+  const onSearchHandle = async () => {
     if (searchValue.length > 0) {
-      const filteredData = pokemonData.filter(pokemon => {
-        return pokemon.name.includes(searchValue);
+      setPokemonData([]);
+      const response = await MainPageService.fetchPokemons(1300);
+      const filteredData = response?.results.filter(pokemon => {
+        return pokemon.name.includes(searchValue.toLowerCase());
       });
-      return filteredData;
+      setPokemonData(filteredData ?? [])
     }
-    else {
-      return pokemonData;
-    }
-  }, [searchValue, pokemonData])
+  }
+
 
   const handleScroll = () => {
-    if ((window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight)
-      && totalCount !== pokemonData.length
+    if (
+      (
+        (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight)
+        && totalCount !== pokemonData.length
+      )
       && !fetchState
       )
     {
@@ -59,9 +64,10 @@ const MainPage: React.FC = () => {
         title="Who you are looking for?"
         searchValue={searchValue}
         onChangeSearch={setSearchValue}
+        onSearch={onSearchHandle}
       />
       <PageLayout
-        data={filterData()}
+        data={pokemonData}
       />
     </>
   )

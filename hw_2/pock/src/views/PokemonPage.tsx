@@ -7,6 +7,7 @@ import PokemonStatistic from "../components/PokemonPage/PokemonStatistic";
 import styled from "styled-components";
 import Breeding from "../components/PokemonPage/Breeding";
 import Moves from "../components/PokemonPage/Moves";
+import Abilities from "../components/PokemonPage/Abilities";
 
 const PageContainer = styled.div`
   display: flex;
@@ -47,9 +48,11 @@ const PokemonPage : React.FC = () => {
             <Moves
               pokemon={pokemonData}
             />
+            <Abilities
+              pokemon={pokemonData}
+            />
           </>
         )}
-
       </PageContainer>
     </>
   )

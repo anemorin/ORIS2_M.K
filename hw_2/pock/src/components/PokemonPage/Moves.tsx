@@ -11,13 +11,13 @@ const Header = styled.div`
   align-items: center;
 `
 
-const Button = styled.button`
-  padding: 12px 24px;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 24px;
-`
+// const Button = styled.button`
+//   padding: 12px 24px;
+//   background-color: black;
+//   color: white;
+//   border: none;
+//   border-radius: 24px;
+// `
 
 const MovesContainer = styled.div`
   display: grid;
@@ -58,7 +58,7 @@ const Moves: React.FC<Props> = ({ pokemon }) => {
     <Container>
       <Header>
         <Title>Moves</Title>
-        <Button>See all</Button>
+        {/* <Button>See all</Button> */}
       </Header>
       <MovesContainer>
         {movesList}
