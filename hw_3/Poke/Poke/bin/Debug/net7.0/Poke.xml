@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Poke</name>
+    </assembly>
+    <members>
+        <member name="M:Poke.Controllers.PokemonController.getAll(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Метод для получения всех покемонов
+            </summary>
+            <returns> Возвращает список всех покемонов в системе </returns>
+        </member>
+    </members>
+</doc>
