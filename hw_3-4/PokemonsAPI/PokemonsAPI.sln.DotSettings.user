@@ -1,0 +1,10 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7a9a61c3_002Db5a6_002D48cf_002D906d_002D8143b269b7af/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="YourTestMethod" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::66DF43A5-F4B9-4104-B013-47DAB43F7DBB::net8.0::PokemonAPI.IntegrationTest.GetPokemonByIdOrNameTestClass&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::66DF43A5-F4B9-4104-B013-47DAB43F7DBB::net8.0::PokemonAPI.IntegrationTest.GetAllPokemonsTestClass&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::66DF43A5-F4B9-4104-B013-47DAB43F7DBB::net8.0::PokemonAPI.IntegrationTest.FilterPokemonsTestClass&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::66DF43A5-F4B9-4104-B013-47DAB43F7DBB::net8.0::PokemonAPI.IntegrationTest.PaginationPokemonsTestClass&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::66DF43A5-F4B9-4104-B013-47DAB43F7DBB::net8.0::PokemonAPI.IntegrationTest.GetTypeTestClass&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

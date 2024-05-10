@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PokemonsAPI</name>
+    </assembly>
+    <members>
+        <member name="M:PokemonsAPI.Controllers.PokemonController.GetPokemonById(System.Guid)">
+            <summary>
+            Получить покемона по Id
+            </summary>
+            <param name="id">ID покемона</param>
+            <returns>Покемона по Id</returns>
+        </member>
+        <member name="M:PokemonsAPI.Controllers.PokemonController.GetPokemonByName(System.String)">
+            <summary>
+            Получить покемона по имени
+            </summary>
+            <param name="name">Имя покемона</param>
+            <returns>Покемон по имени</returns>
+        </member>
+        <member name="M:PokemonsAPI.Controllers.PokemonController.GetByFilter(System.String)">
+            <summary>
+            Фильтрация покемонов по стрингу
+            </summary>
+            <param name="name">часть или полное имя покемона</param>
+            <returns>Отфильтрованный список покемонов</returns>
+        </member>
+        <member name="M:PokemonsAPI.Controllers.PokemonController.Pagination(System.Int32,System.Int32)">
+            <summary>
+            Получить несколько покемонов 
+            </summary>
+            <param name="offset">кол-во покемонов</param>
+            <returns>Список Покемонов</returns>
+        </member>
+        <member name="M:PokemonsAPI.Controllers.PokemonController.GetAllPokemons">
+            <summary>
+            Получить всех покемонов
+            </summary>
+            <returns>массив покемонов</returns>
+        </member>
+    </members>
+</doc>
