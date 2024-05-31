@@ -1,16 +1,14 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.General;
 using TeamHost.Domain.Entities;
 using TeamHost.Persistence.Configurations;
+using IdentityDbContext = Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext;
 
 namespace TeamHost.Persistence.Contexts
 {
-    public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, int>
+    public class ApplicationDbContext: IdentityDbContext
     {
-        public DbSet<Chats> Chats { get; set; }
-        
-        public DbSet<Message> Messages { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Platform> Platforms { get; set; }
@@ -18,31 +16,24 @@ namespace TeamHost.Persistence.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Game> Games { get; set; }
         
-        public DbSet<UserInfo> UserInfos { get; set; }
-        
-       
+        /// <summary>
+        /// Профиль пользователя
+        /// </summary>
+        public DbSet<UserProfile> UserProfiles { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
+            //Database.EnsureCreated();
         }
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new CompanyConfiguration());
-            modelBuilder.ApplyConfiguration(new CountryConfiguration());
-            modelBuilder.ApplyConfiguration(new GameConfiguration());
-            modelBuilder.ApplyConfiguration(new StaticFileConfiguration());
-            modelBuilder.ApplyConfiguration(new UserInfoConfiguration());
-            modelBuilder.ApplyConfiguration(new ChatConfiguration());
-            modelBuilder.ApplyConfiguration(new MessageConfiguration());
-
-            modelBuilder.Entity<Company>().HasData(DatabaseSeeder.Companies());
-            modelBuilder.Entity<Category>().HasData(DatabaseSeeder.Categories());
-            modelBuilder.Entity<Platform>().HasData(DatabaseSeeder.Platforms());
-            modelBuilder.Entity<Country>().HasData(DatabaseSeeder.Countries());
-         
             base.OnModelCreating(modelBuilder);
+
+            // Apply the seed data on the tables
+            modelBuilder.Entity<Country>().HasData(DatabaseSeeder.Countries());
+            modelBuilder.Entity<Platform>().HasData(DatabaseSeeder.Platforms());
+            modelBuilder.Entity<Category>().HasData(DatabaseSeeder.Categories());
         }
     }
 }

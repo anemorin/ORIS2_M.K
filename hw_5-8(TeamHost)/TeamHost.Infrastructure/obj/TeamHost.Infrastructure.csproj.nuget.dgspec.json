@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\KFU\\Web\\ORIS2_M.K\\hw_5-8(TeamHost)\\TeamHost.Infrastructure\\TeamHost.Infrastructure.csproj": {}
+    "D:\\KFU\\Web\\ORIS_KS\\HW8\\TeamHost\\TeamHost.Infrastructure\\TeamHost.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\KFU\\Web\\ORIS2_M.K\\hw_5-8(TeamHost)\\TeamHost.Infrastructure\\TeamHost.Infrastructure.csproj": {
+    "D:\\KFU\\Web\\ORIS_KS\\HW8\\TeamHost\\TeamHost.Infrastructure\\TeamHost.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\KFU\\Web\\ORIS2_M.K\\hw_5-8(TeamHost)\\TeamHost.Infrastructure\\TeamHost.Infrastructure.csproj",
+        "projectUniqueName": "D:\\KFU\\Web\\ORIS_KS\\HW8\\TeamHost\\TeamHost.Infrastructure\\TeamHost.Infrastructure.csproj",
         "projectName": "TeamHost.Infrastructure",
-        "projectPath": "D:\\KFU\\Web\\ORIS2_M.K\\hw_5-8(TeamHost)\\TeamHost.Infrastructure\\TeamHost.Infrastructure.csproj",
+        "projectPath": "D:\\KFU\\Web\\ORIS_KS\\HW8\\TeamHost\\TeamHost.Infrastructure\\TeamHost.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\deter\\.nuget\\packages\\",
-        "outputPath": "D:\\KFU\\Web\\ORIS2_M.K\\hw_5-8(TeamHost)\\TeamHost.Infrastructure\\obj\\",
+        "outputPath": "D:\\KFU\\Web\\ORIS_KS\\HW8\\TeamHost\\TeamHost.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deter\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,11 +43,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

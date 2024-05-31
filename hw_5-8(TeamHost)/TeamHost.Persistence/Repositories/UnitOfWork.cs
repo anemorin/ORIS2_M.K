@@ -5,7 +5,6 @@ using TeamHost.Persistence.Contexts;
 
 namespace TeamHost.Persistence.Repositories
 {
-    
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _dbContext;
